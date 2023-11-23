@@ -51,6 +51,7 @@ jobs:
     - name: Change java version
       uses: actions/setup-java@v3
       with:
+        distribution: 'oracle'
         java-version: '14'
 
     # Initializes the CodeQL tools for scanning.
