@@ -125,8 +125,11 @@ spotless {
 
     java {
         licenseHeaderFile rootProject.file('config/spotless/spotless.header')
-        sourceCompatibility = JavaVersion.VERSION_11 // or another compatible version
-        targetCompatibility = JavaVersion.VERSION_11 // or another compatible version
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(14)
+        }
+        // sourceCompatibility = JavaVersion.VERSION_11 // or another compatible version
+        // targetCompatibility = JavaVersion.VERSION_11 // or another compatible version
 
         custom 'google-java-format', { source ->
             com.google.googlejavaformat.java.JavaFormatterOptions options = new com.google.googlejavaformat.java.AutoValue_JavaFormatterOptions.Builder()
